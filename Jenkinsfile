@@ -9,15 +9,15 @@ node {
     // Checkout source code from Git
     stage 'Checking out scm for repository'
     checkout scm
-    stage 'performing unit/integration test on docker images(push/pull/login/build/integrity)'
+    stage '(TEST) unit/integration testing'
     sh 'make test'
-    stage 'Building the image with tag'
+    stage '(BUILD) building the image with tag'
     sh "docker build -t 10.0.1.86:6555/docker-cicd/nginx:${gitCommit()} ."
-    stage 'login to the docker private repository(artifactory)'
+    stage 'login'
     sh "docker login -u admin -p 'password' 10.0.1.86:6555"
-    stage 'Publishing the images on private docker repo(artifactory)'
+    stage '(PUBLISH) Publishing the image '
     sh "docker push 10.0.1.86:6555/docker-cicd/nginx:${gitCommit()}"
-     stage 'Deploying the container image to the marathon'
+     stage '(DEPLOY) Deploying the container'
     marathon(
         url: 'http://10.0.1.85:8080',
         forceUpdate: true,
@@ -25,4 +25,10 @@ node {
         appId: 'blog',
         docker: "10.0.1.86:6555/docker-cicd/nginx:${gitCommit()}".toString()
     )
+     finally {
+        stage 'Collect test reports'
+        step([$class: 'JUnitResultArchiver', testResults: '**/reports/*.xml'])
+         stage 'clean up'
+     }
+
 }
