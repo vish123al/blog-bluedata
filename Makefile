@@ -6,5 +6,5 @@ test:
 	@ echo "Ensuring image is ready"
 	@ docker ps
 	@ echo "Running tests..."
-	@ docker push 10.0.1.86:6555/docker-cicd/nginx .
+	@ docker push 10.0.1.86:6555/docker-cicd/nginx 
 	@ echo "Testing complete"
