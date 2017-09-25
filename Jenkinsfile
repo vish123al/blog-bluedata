@@ -12,8 +12,8 @@ node {
 
     // Build Docker image
     stage 'Build'
-    sh "export DOCKER_OPTS=" --insecure-registry 10.0.1.81:6555" "
-    sh "DOCKER_OPTS=" --insecure-registry 10.0.1.81:6555" "
+    //sh 'export DOCKER_OPTS=" --insecure-registry 10.0.1.81:6555" '
+    sh 'DOCKER_OPTS=" --insecure-registry 10.0.1.81:6555" '
     sh "docker build -t 10.0.1.81:6555/docker-cicd/nginx:${gitCommit()} ."
 
     // Log in and push image to GitLab
