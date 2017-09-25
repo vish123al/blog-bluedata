@@ -27,7 +27,7 @@ node {
     )
    
         stage 'Collect test reports'
-        step([$class: 'JUnitResultArchiver', testResults: '**/reports/*.xml'])
+        step([$class: 'JUnitResultArchiver', testResults: '*.xml'])
          stage 'clean up'
 
 }
