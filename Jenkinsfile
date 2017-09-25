@@ -9,6 +9,8 @@ node {
     // Checkout source code from Git
     stage 'Checkout'
     checkout scm
+    stage 'unit/integration test'
+    sh 'make test'
     stage 'Build'
     sh "docker build -t 10.0.1.86:6555/docker-cicd/nginx:${gitCommit()} ."
     stage 'login'
