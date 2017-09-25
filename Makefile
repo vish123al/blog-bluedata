@@ -1,10 +1,10 @@
 test:
-        $ "Running tests...kkk"
-        @ docker pull 10.0.1.86:6555/docker-cicd/nginx
-        $ "Running tests..."
-        @ docker build -t 10.0.1.86:6555/docker-cicd/nginx .
-        $ "Running tests..."
-        @ docker build -t 10.0.1.86:6555/docker-cicd/nginx up test
-        $ "progress"
-        @ docker cp 10.0.1.86:6555/docker-cicd/nginx ps -q test:/reports/. reports
-        $ " check 10.0.1.86:6555/docker-cicd/nginx test
+	${INFO} "Pulling latest images..."
+	@ docker pull 10.0.1.86:6555/docker-cicd/nginx
+	${INFO} "Building images..."
+	@ docker build  -t 10.0.1.86:6555/docker-cicd/nginx:
+	${INFO} "Ensuring image is ready"
+	@ docker ps
+	${INFO} "Running tests..."
+	@ docker push 10.0.1.86:6555/docker-cicd/nginx
+	${INFO} "Testing complete"
