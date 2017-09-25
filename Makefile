@@ -1,5 +1,5 @@
 test:
-        $ "Running tests..."
+        $ "Running tests...kkk"
         @ docker pull 10.0.1.86:6555/docker-cicd/nginx
         $ "Running tests..."
         @ docker build -t 10.0.1.86:6555/docker-cicd/nginx .
