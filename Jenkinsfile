@@ -17,14 +17,8 @@ node {
 
     // Log in and push image to GitLab
     stage 'Publish'
-    withCredentials(
-        [[
-            $class: 'UsernamePasswordMultiBinding',
-            passwordVariable: 'PASSWORD',
-            usernameVariable: 'USERNAME'
-        ]]
-    ) {
-        sh "docker login -u 'admin' -p 'password' "
+     {
+        sh "docker login -u admin -p 'password' 10.0.1.86:6555 "
         sh "docker push 10.0.1.86:6555/docker-cicd/nginx:${gitCommit()}"
     }
 
