@@ -1,4 +1,4 @@
-FROM nginx:latest
+FROM 10.0.1.81:6555/docker-cicd/nginx:latest
 COPY index.html /usr/share/nginx/html/index.html
 COPY /css/ /usr/share/nginx/html/css/
 COPY /icon-fonts/ /usr/share/nginx/html/icon-fonts/
