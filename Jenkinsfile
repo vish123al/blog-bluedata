@@ -7,17 +7,17 @@ def gitCommit() {
 
 node {
     // Checkout source code from Git
-    stage 'Checkout'
+    stage 'Checking out scm for repository'
     checkout scm
-    stage 'unit/integration test'
+    stage 'performing unit/integration test on docker images(push/pull/login/build/integrity)'
     sh 'make test'
-    stage 'Build'
+    stage 'Building the image with tag'
     sh "docker build -t 10.0.1.86:6555/docker-cicd/nginx:${gitCommit()} ."
-    stage 'login'
+    stage 'login to the docker private repository(artifactory)'
     sh "docker login -u admin -p 'password' 10.0.1.86:6555"
-    stage 'Publish'
+    stage 'Publishing the images on private docker repo(artifactory)'
     sh "docker push 10.0.1.86:6555/docker-cicd/nginx:${gitCommit()}"
-     stage 'Deploy'
+     stage 'Deploying the container image to the marathon'
     marathon(
         url: 'http://10.0.1.85:8080',
         forceUpdate: true,
