@@ -12,7 +12,7 @@ node {
 
     // Build Docker image
     stage 'Build'
-    sh "docker login -u 'admin' -p 'password' "
+    sh "docker login -u admin -p 'password' 10.0.1.86:6555 "
     sh "docker build -t 10.0.1.86:6555/docker-cicd/nginx:${gitCommit()} ."
 
     // Log in and push image to GitLab
