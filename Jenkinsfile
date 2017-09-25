@@ -12,7 +12,10 @@ node {
     stage 'Build'
     sh "docker build -t 10.0.1.86:6555/docker-cicd/nginx:${gitCommit()} ."
     stage 'Publish'
+    {
+    sh "docker login -u admin -p 'password' 10.0.1.86:6556"
     sh "docker push 10.0.1.86:6555/docker-cicd/nginx:${gitCommit()}"
+    }
      stage 'Deploy'
     marathon(
         url: 'http://10.0.1.85:8080',
