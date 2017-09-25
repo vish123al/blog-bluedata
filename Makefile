@@ -1,7 +1,7 @@
 test:
-	${INFO} "Pulling latest images..."
+	$ "Pulling latest images..."
 	@ docker pull 10.0.1.86:6555/docker-cicd/nginx
-	${INFO} "Building images..."
+	$ "Building images..."
 	@ docker build  -t 10.0.1.86:6555/docker-cicd/nginx:
 	${INFO} "Ensuring image is ready"
 	@ docker ps
