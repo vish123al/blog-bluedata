@@ -12,8 +12,8 @@ node {
 
     // Build Docker image
     stage 'Build'
-  
-    sh "docker build -t 10.0.1.81:6555/docker-cicd/nginx:${gitCommit()} ."
+    sh "docker login -u 'admin' -p 'password' "
+    sh "docker build -t 10.0.1.86:6555/docker-cicd/nginx:${gitCommit()} ."
 
     // Log in and push image to GitLab
     stage 'Publish'
@@ -25,7 +25,7 @@ node {
         ]]
     ) {
         sh "docker login -u 'admin' -p 'password' "
-        sh "docker push 10.0.1.81:6555/docker-cicd/nginx:${gitCommit()}"
+        sh "docker push 10.0.1.86:6555/docker-cicd/nginx:${gitCommit()}"
     }
 
     stage 'Deploy'
@@ -35,6 +35,6 @@ node {
         forceUpdate: true,
         filename: 'marathon.json',
         appId: 'blog',
-        docker: "10.0.1.81:6555/docker-cicd/nginx:${gitCommit()}".toString()
+        docker: "10.0.1.86:6555/docker-cicd/nginx:${gitCommit()}".toString()
     )
 }
