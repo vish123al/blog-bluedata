@@ -9,7 +9,7 @@
     "type": "DOCKER",
     "volumes": [],
     "docker": {
-      "image": "10.0.1.81:6555/docker-cicd/nginx:latest",
+      "image": "10.0.1.86:6555/docker-cicd/nginx:latest",
       "network": "BRIDGE",
       "portMappings": [
         {
