@@ -25,7 +25,7 @@ node {
         appId: 'blog',
         docker: "10.0.1.86:6555/docker-cicd/nginx:${gitCommit()}".toString()
     )
-    :
+   
         stage 'Collect test reports'
         step([$class: 'JUnitResultArchiver', testResults: '**/reports/*.xml'])
          stage 'clean up'
