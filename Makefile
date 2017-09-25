@@ -5,6 +5,8 @@ test:
 	@ docker build  -t 10.0.1.86:6555/docker-cicd/nginx .
 	@ echo "Ensuring image is ready"
 	@ docker ps
-	@ echo "Running tests..."
+	@ echo "login checking"
+	@ docker login -u admin -p 'password' 10.0.1.86:6555
+	@ echo "testing image for push"
 	@ docker push 10.0.1.86:6555/docker-cicd/nginx 
 	@ echo "Testing complete"
