@@ -11,11 +11,11 @@ node {
     checkout scm
     stage '(TEST) unit/integration testing'
     sh 'make test'
-    stage '(BUILD) building the image with tag'
+    stage '(BUILD) building image'
     sh "docker build -t 10.0.1.86:6555/docker-cicd/nginx:${gitCommit()} ."
-    stage 'login'
+    stage 'login to artifactory'
     sh "docker login -u admin -p 'password' 10.0.1.86:6555"
-    stage '(PUBLISH) Publishing the image '
+    stage '(PUBLISH) Pushing the image '
     sh "docker push 10.0.1.86:6555/docker-cicd/nginx:${gitCommit()}"
      stage '(DEPLOY) Deploying the container'
     marathon(
