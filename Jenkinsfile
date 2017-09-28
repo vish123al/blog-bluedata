@@ -6,6 +6,8 @@ def gitCommit() {
 }
 
 node {
+    junit 'blog/*.xml'
+
     // Checkout source code from Git
     stage 'Checking out scm for repository'
     checkout scm
@@ -26,7 +28,7 @@ node {
     )
    
         stage 'Collect test reports'
-        junit healthScaleFactor: 20.0, testResults: '**/target/surefire-reports/*.xml'
+        step([$class: 'JUnitResultArchiver', testResults: '**/reports/*.xml'])
         stage 'Clean up'
        
                          
