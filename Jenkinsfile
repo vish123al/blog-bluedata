@@ -13,7 +13,6 @@ node {
     sh 'make test'
     stage '(BUILD) building image'
     sh "docker build -t 10.0.1.86:6555/docker-cicd/nginx:${gitCommit()} ."
-    stage 'login to artifactory'
     sh "docker login -u admin -p 'password' 10.0.1.86:6555"
     stage '(PUBLISH) Pushing the image '
     sh "docker push 10.0.1.86:6555/docker-cicd/nginx:${gitCommit()}"
