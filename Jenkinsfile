@@ -27,8 +27,8 @@ node {
     )
    
         stage 'Collect test reports'
-        sh 'cd /reports'
-         sh 'touch *.xml'
+        
+         sh 'touch reports/*.xml'
          junit '**/reports/*.xml'
        // step([$class: 'JUnitResultArchiver', testResults: '**/reports/*.xml'])
         stage 'Clean up'
