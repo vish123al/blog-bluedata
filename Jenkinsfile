@@ -10,7 +10,7 @@ node {
     stage 'Checking out scm for repository'
     checkout scm
     stage '(TEST) unit/integration testing'
-    sh 'make test'
+   // sh 'make test'
     stage '(BUILD) building image'
     sh "docker build -t 10.0.1.86:6555/docker-cicd/nginx:${gitCommit()} ."
     sh "docker login -u admin -p 'password' 10.0.1.86:6555"
@@ -26,7 +26,7 @@ node {
     )
    
         stage 'Collect test reports'
-       step([$class: 'JUnitResultArchiver', testResults: '*.xml'])
+        junit healthScaleFactor: 20.0, testResults: '**/target/surefire-reports/*.xml'
         stage 'Clean up'
        
                          
