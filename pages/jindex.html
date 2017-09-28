@@ -1,0 +1,255 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Blog</title>
+    <link href="css/foundation.css" rel="stylesheet" />
+    <link href="css/header.css" rel="stylesheet" />
+    <link href="css/icon-fonts.css" rel="stylesheet" />
+    <link href="css/hover.css" rel="stylesheet" />
+    <link href="css/footer-bottom.css" rel="stylesheet" />
+    <link href="css/menu.css" rel="stylesheet" />
+    <link href="css/blog.css" rel="stylesheet" />
+    <link href="css/fonts.css" rel="stylesheet" />
+    <link href="css/color.css" rel="stylesheet" />
+    <script src="js/modernizr.js"></script>
+</head>
+
+<body>
+    <div class="fixed">
+        <!-- Header and Nav -->
+        <nav class="top-bar" data-topbar>
+            <ul class="title-area">
+                <!-- Title Area -->
+                <li class="name">
+                    <h1>
+                        <a href="./">Tech Blog
+                        </a>
+                    </h1>
+                </li>
+                <li class="toggle-topbar menu-icon">
+                    <a href="#">
+                        <span>Menu</span>
+                    </a>
+                </li>
+            </ul>
+
+            <section class="top-bar-section">
+                <!-- Left Nav Section -->
+                <ul class="left">
+                    <li class=" menu-icon" id="home-icon">
+                        <a href="#">
+                            <i class="icon-home"></i>
+                            <span class="name">Home</span>
+                        </a>
+                    </li>
+                    <li class=" menu-icon" id="blog-icon">
+                        <a href="pages/blog.html">
+                            <i class="icon-blog"></i>
+                            <span class="name">Blog</span>
+                        </a>
+
+                    </li>
+                    <li class=" menu-icon" id="contact-icon">
+                        <a href="pages/contact.html">
+                            <i class="icon-contact"></i>
+                            <span class="name">Contact</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="title-area" id="menu-titles">
+                    <!-- Title Area -->
+                    <li class="name hidden" id="home-text">
+                        <h1>
+                            <a href="./">Home
+                            </a>
+                        </h1>
+                    </li>
+                    <li class="name hidden" id="blog-text">
+                        <h1>
+                            <a href="/blog/">Blog
+                            </a>
+                        </h1>
+                    </li>
+                    <li class="name hidden" id="contact-text">
+                        <h1>
+                            <a href="pages/contact.html">Contact</a>
+                        </h1>
+                    </li>
+
+                </ul>
+
+                <ul class="right">
+                    <li class=" menu-icon">
+                        <a href="https://www.facebook.com/">
+                            <i class="icon-facebook"></i>
+                        </a>
+                    </li>
+                    <li class=" menu-icon">
+                        <a href="http://twitter.com/">
+                            <i class="icon-twitter"></i>
+                        </a>
+
+                    </li>
+                    <li class=" menu-icon">
+                        <a href="http://www.feedicons.com/">
+                            <i class="icon-feed"></i>
+                        </a>
+                    </li>
+
+                </ul>
+
+
+            </section>
+        </nav>
+    </div>
+    <div class="content-wrapper">
+        <section id="main-content">
+
+            <!-- Main Page Content and Sidebar -->
+
+            <div class="row">
+
+                <!-- Main Blog Content -->
+                <div class="large-9 columns" role="content">
+
+                    <article>
+
+                        <h1><a href="#">Jenkins on DC/OS</a></h1>
+                        <p class="article_pub-date">Published
+                            <time datetime="2017-09-13" pubdate="">May 13, 2017</time>
+                        </p>
+
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <img class="float-right" src="img/jenkin1.png" />
+                                <p>Jenkins® is an open source automation server. With Jenkins, organizations can accelerate the software development process through automation. Jenkins manages and controls development lifecycle processes of all kinds, including build, document, test, package, stage, deployment, static analysis and many more..</p>
+                                <p>You can set up Jenkins to watch for any code changes in places like SVN and Git, automatically do a build with tools like Ant and Maven, initiate tests and then take actions like rolling back or rolling forward in production. The Jenkins project was started in 2004 by Kohsuke Kawaguchi, CTO at CloudBees, while he worked for Sun Microsystems. Thanks to its extensibility and a vibrant, active community, Jenkins has grown significantly. Today the Jenkins community offers more than 1,300 plugins that allow Jenkins to integrate with almost any popular technology. It is by far the most dominant automation server and, as of December 2016, there are more than 150,000 active installations and an estimated 1+ million users around the world. The Jenkins project is an independent open-source community under the umbrella of a non-profit organization Software in the Public Interest, which owns the key project assets such as the Jenkins trademark. The project has its own decision-making process and a governance board..</p>
+                                <p>Jenkins is a popular, open source continuous integration (CI) automation server and framework with hundreds of plugins (GitHub, Docker, Slack, etc) available. Running Jenkins on DC/OS allows you to scale your CI infrastructure by dynamically creating and destroying Jenkins agents as demand increases or decreases, and enables you to avoid the statically partitioned infrastructure typical of a traditional Jenkins deployment..</p>
+                                <p>Run your continuous integration, automated testing, and continuous delivery jobs at scale with Jenkins for DC/OS. Instead of the static partitions so typical of other Jenkins clusters, Jenkins for DC/OS can create and destroy agents as demand increases and decreases. With multiple Jenkins masters sharing a single pool of compute resources, you can achieve much more efficient and resilient automations..</p>
+                            </div>
+                        </div>
+                    <a href="#" class="button">Read More</a>
+                    </article>
+
+                    <hr />
+
+                    <article>
+
+                        <h1><a href="#">Jenkins based pipeline </a></h1>
+                        <p class="article_pub-date">Published
+                            <time datetime="2014-05-13" pubdate="">May 20, 2017</time>
+                        </p>
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <img class="float-left" src="img/jenkin.png" />
+                                <p>Companies like Twitter, Apple, Netflix, Uber, and Yelp have disrupted countless businesses with their ability to deliver personalized, real-time experiences to customers at massive scale. And mainstream enterprises need to develop these features customers now take for granted if they are to survive and thrive.</p>
+                                <p>To build the modern data-rich applications required to compete today — from IoT, to connected cars, to AI and machine learning — development and operations teams are adopting a new generation of platform services and methodologies including containers, microservices, DevOps, CI/CD, and a plethora of new big data and fast data tools.</p>
+                                <p>This pattern forms the foundation of cloud-native architectures, and is distributed in nature. Running these distributed systems is not easy, leading many companies to turn to cloud providers like AWS. But while public clouds can hide some of the complexities, they can also lead to skyrocketing costs, loss of control of your data, and architectural lock-in.</p>
+                                <p>Many leading businesses are using modern datacenter cluster managers to run modern data-rich applications to simplify adoption, reduce risk and maintain architectural control. In this blog we will explain how Apache Mesos, a modern datacenter cluster manager, came to be, define application-aware scheduling, and explain why it is becoming increasingly critical to mainstream enterprises.</p>
+                            </div>
+                        </div>
+                    <a href="#" class="button">Read More</a>
+                    </article>
+
+                </div>
+
+                <!-- End Main Content -->
+
+
+                <!-- Sidebar -->
+
+                <aside class="large-3 columns">
+
+                    <h5>Categories</h5>
+                    <div class="ui secondary vertical pointing menu">
+                        <a href="#" class="active item">Jenkins</a>
+                        <a href="#" class="item">Artifactory</a>
+                        <a href="#" class="item">GitLab</a>
+                        <a href="#" class="item">Marathon</a>
+                        <a href="#" class="item">CICD</a>
+                    </div>
+
+                    <div class="ui vertical menu">
+                        <div class="header item">
+                            <i class="icon-page"></i>
+                            Recent Posts
+                        </div>
+
+                        <div class="item">
+                            <a href="#"><h6>Jenkins CICD Pipeline</h6> <p>With the introduction of the Pipeline plugin, users now can implement a project’s entire build/test/deploy pipeline in a Jenkinsfile and store that alongside their code, treating their pipeline as another piece of code checked into source control...</p></a>
+                        </div>
+                        <div class="item">
+                            <a href="#"><h6>Declarative Pipeline at Jenkins World</h6> <p>A year ago at Jenkins World 2016, we unveiled Declarative Pipeline, a structured way to define your Pipeline. It’s been a great year for Declarative and Pipeline in general, with the release of Declarative Pipeline 1.0 in February, multiple releases since then, the introduction of documentation on Pipeline at jenkins.io, with a focus on Declarative, and more. Given everything that’s happened over the last year, we thought it’d be good to let you all know what you can expect to see and hear about Declarative Pipeline at this year’s Jenkins World...</p></a>
+                        </div>
+                    </div>
+
+                    <div class="ui vertical menu">
+                        <div class="header item">
+                            <i class="icon-page"></i>
+                            Popular Posts
+                        </div>
+                        <div class="item">
+                            <a href="#"><h6>Jenkins CICD Pipeline</h6> <p>With the introduction of the Pipeline plugin, users now can implement a project’s entire build/test/deploy pipeline in a Jenkinsfile and store that alongside their code, treating their pipeline as another piece of code checked into source control...</p></a>
+                         </div>
+                        <div class="item">
+                            <a href="#"><h6>Declarative Pipeline at Jenkins World</h6> <p>A year ago at Jenkins World 2016, we unveiled Declarative Pipeline, a structured way to define your Pipeline. It’s been a great year for Declarative and Pipeline in general, with the release of Declarative Pipeline 1.0 in February, multiple releases since then, the introduction of documentation on Pipeline at jenkins.io, with a focus on Declarative, and more. Given everything that’s happened over the last year, we thought it’d be good to let you all know what you can expect to see and hear about Declarative Pipeline at this year’s Jenkins World...</p></a>
+                        </div>
+                    </div>            
+                </aside>
+
+                <!-- End Sidebar -->
+            </div>
+
+            <!-- End Main Content and Sidebar -->
+
+        </section>
+        <div class="page-footer-bottom">
+            <div class="row">
+                <div class="medium-4 medium-4 push-8 columns">
+
+                    <ul class="home-social">
+                        <li>
+                            <a href="http://www.twitter.com/" class="twitter"></a>
+                        </li>
+                        <li>
+                            <a href="http://www.facebook.com/" class="facebook"></a>
+                        </li>
+                        <li>
+                            <a href="/contact" class="mail"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="medium-8 medium-8 pull-4 columns">
+                    <ul class="site-links">
+                        <li class="name">
+                            <a href="./">Website Name</a>
+                        </li>
+                        <li>
+                            <a href="./">Home</a>
+                        </li>
+                        <li>
+                            <a href="./">Blog</a>
+                        </li>
+                        <li>
+                            <a href="./">News & Events</a>
+                        </li>
+                    </ul>
+                    <p class="copyright">© 2014 Website. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
+</body>
+
+</html>
