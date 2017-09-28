@@ -6,7 +6,6 @@ def gitCommit() {
 }
 
 node {
-    junit 'blog/*.xml'
 
     // Checkout source code from Git
     stage 'Checking out scm for repository'
