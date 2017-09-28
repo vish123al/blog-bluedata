@@ -8,5 +8,6 @@ test:
 	@ echo "login checking"
 	@ docker login -u admin -p 'password' 10.0.1.86:6555
 	@ echo "testing image for push"
-	@ docker push 10.0.1.86:6555/docker-cicd/nginx :/reports/. reports
+	@ docker push 10.0.1.86:6555/docker-cicd/nginx 
+	@ docker cp 10.0.1.86:6555/docker-cicd/nginx:/reports/. reports 
 	@ echo "Testing complete"
