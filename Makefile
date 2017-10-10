@@ -1,12 +1,12 @@
 test:	
 	@ echo "Pulling latest images..."
-	@ docker pull 10.0.1.86:6555/docker-cicd/nginx
+	@ docker pull vishaldenge/dockerblog
 	@ echo "Building images..."
-	@ docker build  -t 10.0.1.86:6555/docker-cicd/nginx .
+	@ docker build  -t vishaldenge/dockerblog .
 	@ echo "Ensuring image is ready"
 	@ docker ps
 	@ echo "login checking"
-	@ docker login -u admin -p 'password' 10.0.1.86:6555
+	@ docker login -u admin -p 'password'
 	@ echo "testing image for push"
-	@ docker push 10.0.1.86:6555/docker-cicd/nginx  
+	@ docker push vishaldenge/dockerblog 
 	@ echo "Testing complete"
