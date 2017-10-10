@@ -1,5 +1,5 @@
 {
-  "id": "/blog",
+  "id": "/dockerblog",
   "cmd": null,
   "cpus": 0.1,
   "mem": 128,
@@ -9,7 +9,7 @@
     "type": "DOCKER",
     "volumes": [],
     "docker": {
-      "image": "10.0.1.86:6555/docker-cicd/nginx:latest",
+      "image": "vishaldenge/dockerblog",
       "network": "BRIDGE",
       "portMappings": [
         {
