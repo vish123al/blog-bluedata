@@ -19,7 +19,7 @@ node {
     sh "docker push vishaldenge/dockerblog:${gitCommit()}"
      stage '(DEPLOY) Deploying the container'
     marathon(
-       url: 'http://10.0.1.85:8080',
+       url: 'http://10.0.0.33:8080',
         forceUpdate: true,
         filename: 'marathon.json',
         appId: 'blog',
