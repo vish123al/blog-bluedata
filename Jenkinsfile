@@ -20,7 +20,7 @@ node {
      stage '(DEPLOY) Deploying the container'
     marathon(
        // url: 'http://10.0.1.85:8080',
-        url: 'https://216.84.237.75/service/marathon-user',
+        url: 'http://216.84.237.75:8080',
         forceUpdate: true,
         filename: 'marathon.json',
         appId: 'blog',
